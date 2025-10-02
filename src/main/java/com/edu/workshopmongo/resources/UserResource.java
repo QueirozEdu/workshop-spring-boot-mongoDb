@@ -11,17 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value="/users")
 public class UserResource {
 
     @Autowired
     private UserService service;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method=RequestMethod.GET)
     public ResponseEntity<List<User>> findAll() {
-
         List<User> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
-
 }
